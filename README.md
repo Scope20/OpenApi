@@ -1,2 +1,2 @@
 # OpenApi
-yaml file for testing
+yaml/JSON files for FHIR compliance testing
