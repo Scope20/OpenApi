@@ -1,0 +1,357 @@
+{
+  "info": {
+    "termsOfService": "https://api.mymhealth.com/terms-of-use",
+    "version": "1.0.0",
+    "description": "The mymhealth openapi is used for all mymhealth related client-server communications",
+    "title": "my mhealth OpenAPI",
+    "contact": {
+      "url": "https://mymhealth.com/",
+      "tel": "01202 299 583",
+      "email": "info@mymhealth.com"
+    },
+    "servers": [{
+      "url": "https://api.mymhealth.com"
+    }]
+  },
+  "paths": {
+    "/patient": {
+      "maritalStatus": null,
+      "telecom": null,
+      "photo": null,
+      "communication": {
+        "prefered": null,
+        "language": null
+      },
+      "birthDate": null,
+      "link": {
+        "other": null,
+        "type": null
+      },
+      "address": null,
+      "active": null,
+      "post": {
+        "description": "creates a new patient account. Duplicates disallowed",
+        "responses": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "$ref": "#/schemas/patients"
+                },
+                "type": "string"
+              }
+            }
+          },
+          "200": null
+        }
+      },
+      "managingOrganization": null,
+      "name": null,
+      "gender": null,
+      "multipleBirthInteger": null,
+      "generalPractioner": null,
+      "contact": {
+        "organization": null,
+        "name": null,
+        "relationship": null,
+        "address": null,
+        "telecom": null,
+        "gender": null,
+        "period": null
+      },
+      "multipleBirthBoolean": null,
+      "identifier": null,
+      "deceased": {
+        "deceasedBoolean": null,
+        "deceasedDateTime": null
+      }
+    }
+  },
+  "/auditEvent": {
+    "subtype": null,
+    "recorded": null,
+    "outcomeDesc": null,
+    "agent": {
+      "name": null,
+      "reference": null,
+      "altId": null,
+      "media": null,
+      "userId": null,
+      "requestor": null,
+      "purposeOfUse": null,
+      "role": null,
+      "location": null,
+      "policy": null,
+      "network": {
+        "type": null,
+        "address": null
+      }
+    },
+    "entity": {
+      "name": null,
+      "reference": null,
+      "detail": {
+        "type": null,
+        "value": null
+      },
+      "role": null,
+      "securityLabel": null,
+      "query": null,
+      "identifier": null,
+      "type": null,
+      "lifecycle": null,
+      "description": null
+    },
+    "source": {
+      "identifier": null,
+      "type": null,
+      "site": null
+    },
+    "purposeOfEvent": null,
+    "action": null,
+    "post": {
+      "description": "A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "$ref": "#/schemas/auditevent"
+                },
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "outcome": null,
+    "type": null
+  },
+  "/carePlan": {
+    "status": null,
+    "addresses": null,
+    "subject": null,
+    "supportingInfo": null,
+    "period": null,
+    "intent": null,
+    "post": {
+      "description": "Care Plans are used in many areas of healthcare with a variety of scopes, they can be used to represent both proposed plans as well as active plans.",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "$ref": "#/schemas/careplan"
+                },
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "description": null,
+    "category": null,
+    "definition": null,
+    "replaces": null,
+    "goal": null,
+    "title": null,
+    "author": null,
+    "basedOn": null,
+    "note": null,
+    "context": null,
+    "activity": {
+      "progress": null,
+      "outcomeCodeableConcept": null,
+      "outcomeReference": null,
+      "reference": null,
+      "detail": {
+        "status": null,
+        "scheduled": {
+          "scheduledTiming": null,
+          "scheduledPeriod": null,
+          "scheduledString": null
+        },
+        "product": {
+          "productCodeableConcept": null,
+          "productReference": null
+        },
+        "code": null,
+        "description": null,
+        "statusReason": null,
+        "performer": null,
+        "prohibited": null,
+        "reasonCode": null,
+        "dailyAmount": null,
+        "quantitiy": null,
+        "category": null,
+        "definition": null,
+        "reasonReference": null,
+        "goal": null,
+        "location": null
+      }
+    },
+    "careTeam": null,
+    "identifier": null,
+    "partOf": null
+  },
+  "/observation": {
+    "comment": null,
+    "status": null,
+    "code": null,
+    "interpretation": null,
+    "issued": null,
+    "specimen": null,
+    "component": {
+      "referenceRange": null,
+      "dataAbsentReason": null,
+      "interpretation": null,
+      "value": {
+        "valueCodeableConcept": null,
+        "valueTime": null,
+        "valuePeriod": null,
+        "valueRange": null,
+        "valueQuantity": null,
+        "valueRatio": null,
+        "valueAttachment": null,
+        "valueBoolean": null,
+        "valueDateTime": null,
+        "valueString": null,
+        "valueSampledData": null
+      },
+      "code": null
+    },
+    "basedon": null,
+    "related": {
+      "type": null,
+      "target": null
+    },
+    "bodySite": null,
+    "device": null,
+    "post": {
+      "description": "Observations support diagnosis, monitor progress, determine baselines and patterns and capture demographic characteristics",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "$ref": "#/schemas/observation"
+                },
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "subject": null,
+    "category": null,
+    "effective": {
+      "effectiveDateTime": null,
+      "effectivePeriod": null
+    },
+    "value": {
+      "valueCodeableConcept": null,
+      "valueTime": null,
+      "valuePeriod": null,
+      "valueRange": null,
+      "valueQuantity": null,
+      "valueRatio": null,
+      "valueAttachment": null,
+      "valueBoolean": null,
+      "valueDateTime": null,
+      "valueString": null,
+      "valueSampledData": null
+    },
+    "referenceRange": {
+      "high": null,
+      "low": null,
+      "text": null,
+      "age": null,
+      "type": null,
+      "appliesTo": null
+    },
+    "context": null,
+    "dataAbsetReason": null,
+    "identifier": null,
+    "method": null,
+    "performed": null
+  },
+  "openapi": "3.0.0",
+  "/Location": {
+    "status": null,
+    "description": null,
+    "telecom": null,
+    "endpoint": null,
+    "address": null,
+    "post": {
+      "description": "The Location is intended to describe the more physical structures managed/operated by an organisation",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "$ref": "#/schemas/location"
+                },
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "managingOrganization": null,
+    "physicalType": null,
+    "name": null,
+    "alias": null,
+    "operationalStatus": null,
+    "mode": null,
+    "position": {
+      "latitude": null,
+      "altitude": null,
+      "longitude": null
+    },
+    "identifier": null,
+    "type": null,
+    "partOf": null
+  },
+  "/organization": {
+    "endpoint": null,
+    "name": null,
+    "telecom": null,
+    "alias": null,
+    "contact": {
+      "telecom": null,
+      "purpose": null,
+      "name": null,
+      "address": null
+    },
+    "address": null,
+    "active": null,
+    "post": {
+      "description": "creates a new organisation account. Duplicates disallowed",
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "$ref": "#/schemas/organisation"
+                },
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "identifier": null,
+    "type": null,
+    "partOf": null
+  }
+}
